@@ -5,13 +5,13 @@ import Header from '@/components/organisms/Header'
 
 type Props = {
   children: React.ReactNode
-  home: boolean
+  home?: boolean
 }
 
 const Layout: NextPage<Props> = ({ children }) => (
   <>
     <Header />
-    <Container maxW="container.xl" py="10">
+    <Container maxW="container.xl" py={[4, 6, 8, 10]}>
       <main>{children}</main>
     </Container>
   </>

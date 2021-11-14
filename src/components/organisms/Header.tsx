@@ -1,22 +1,46 @@
-import { useEffect } from 'react'
 import type { NextPage } from 'next'
-import { Container, Flex, Box, Heading, Spacer } from '@chakra-ui/react'
-
-import InputSearch from '@/components/atoms/InputSearch'
+import NextLink from 'next/link'
+import { Container, Flex, Box, HStack, Heading, Link } from '@chakra-ui/react'
 
 const Header: NextPage = () => (
-  <Box bgColor="gray.50" borderBottom="1px" borderColor="gray.200">
+  <Box borderBottom="1px" borderColor="gray.200">
     <Container maxW="container.xl">
-      <Flex as="nav" py="3" align="center">
-        <Box p="2">
-          <Heading as="h1" size="lg">
-            Nabe Tech Blog
+      <Flex as="nav" py="4" alignItems="center">
+        <Box>
+          <Heading as="h1" size="md">
+            Ryuta Watanabe
           </Heading>
         </Box>
-        <Spacer />
-        <Box>
-          <InputSearch />
-        </Box>
+        <HStack pl="6">
+          <NextLink href="/">
+            <Link
+              display="block"
+              fontSize="xs"
+              px="4"
+              py="1.5"
+              color="white"
+              bgColor="teal.700"
+              borderRadius="3xl"
+              _hover={{ textDecoration: 'none', opacity: 0.8 }}
+            >
+              Home
+            </Link>
+          </NextLink>
+          <NextLink href="/about">
+            <Link
+              display="block"
+              fontSize="xs"
+              px="4"
+              py="1.5"
+              color="white"
+              bgColor="teal.700"
+              borderRadius="3xl"
+              _hover={{ textDecoration: 'none', opacity: 0.8 }}
+            >
+              About
+            </Link>
+          </NextLink>
+        </HStack>
       </Flex>
     </Container>
   </Box>
